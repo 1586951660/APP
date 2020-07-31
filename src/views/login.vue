@@ -2,7 +2,7 @@
     <div class="login-wrap">
         <div class="logo">
 <!--            <img src="../assets/img/bg.jpg" alt="">-->
-            <h2>老年人健康管理系统</h2>
+            <h2>智慧居家养老</h2>
         </div>
         <div class="login_form">
             <div class="login_name">
@@ -33,12 +33,16 @@
         },
         methods:{
             loginHandler(){
-                this.$router.push({path:'/views/Test'})
+                this.$router.push({path:"/home/index"})
             }
         }
     }
 </script>
 <style scoped>
+    html{
+        margin: 0;
+        padding: 0;
+    }
     .login-wrap{
         display: flex;
         align-items: center;

@@ -1,9 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import {Tabbar,TabbarItem,NavBar,Grid, GridItem,Tab, Tabs, Col, Row,Button,Icon,Swipe, SwipeItem } from 'vant'
 import Login from '../views/login.vue'
-import Test from '@/views/Test'
+import home from '../views/home'
+import index from '../views/home/index'
+import category from '../views/home/category'
+import account from '../views/home/account'
 
 Vue.use(VueRouter)
+    .use(Tabbar)
+    .use(TabbarItem)
+    .use(NavBar)
+    .use(Grid)
+    .use(GridItem)
+    .use(Tab)
+    .use(Tabs)
+    .use(Col)
+    .use(Row)
+    .use(Button)
+    .use(Icon)
+    .use(Swipe)
+    .use(SwipeItem)
+
 
   const routes = [
   {
@@ -12,18 +30,21 @@ Vue.use(VueRouter)
     component: Login
   },
   {
-    path: '/login',
-    name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/login.vue'),
+    path: '/home',
+    // name: 'home',
+    component:home,
     children:[
       {
-        path: 'test',
-        name: 'Test',
-        // component:Test
-        component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue')
+        path: 'index',
+        component:index,
+      },
+      {
+        path: 'category',
+        component:category,
+      },
+      {
+        path: 'account',
+        component:account,
       }
     ]
   },
